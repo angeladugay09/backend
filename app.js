@@ -1,10 +1,12 @@
 import express from "express";
-import bookRoutes from '../routes/bookRoutes.js';
+import bookRoutes from './routes/bookRoutes.js';
+import studentRoutes from './routes/studentRoutes.js';
 
 // create express app
 const app = express();
 
 app.use('/book', bookRoutes);
+app.use('/student', studentRoutes);
 
 try {
     const port = 3000; // define port variable here for safety 
@@ -14,3 +16,6 @@ try {
 } catch(e) {
     console.log(e);
 }
+
+// 127.0.0.1:3000/book/
+// 192.168.192.174 Sir
