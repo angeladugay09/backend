@@ -4,5 +4,6 @@ import express from "express";
 const studentRoutes = express.Router();
 
 studentRoutes.get('/', studentController.fetchAllStudents);
+studentRoutes.post('/', studentController.createStudent);
 
 export default studentRoutes;
