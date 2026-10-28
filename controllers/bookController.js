@@ -5,6 +5,7 @@ export const fetchAllBooks = async (req, res) =>{
     res.status(200).json(books);
 }
 
+// insert
 export const createBook = async (req, res) =>{
     console.log(req);
     const {title, author} = req.body;
@@ -24,6 +25,7 @@ export const createBook = async (req, res) =>{
     }
 }
 
+// update
 export const editBook= async (req, res) =>{
     const {title, author} = req.body;
     const { id } = req.params;
@@ -32,9 +34,10 @@ export const editBook= async (req, res) =>{
     try{
         const updatedBook = await bookService.updateBook(book);
         res.status(200).json({
-            success:true,
+            success: true,
             message: updatedBook
         });
+    }catch(e){
         console.log(e);
         res.status(500).json({
             error: "Internal Server Error"
@@ -42,6 +45,7 @@ export const editBook= async (req, res) =>{
     }
 }
 
+// delete
 export const deleteBook = async (req, res) =>{
     const { id } = req.params;
     
