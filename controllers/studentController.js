@@ -7,8 +7,8 @@ export const fetchAllStudents = async (req, res) =>{
 
 export const createStudent = async (req, res) =>{
     console.log(req);
-    const {name, program} = req.body;
-    const student = {name, program};
+    const {name, srcode, program} = req.body;
+    const student = {name, srcode, program};
     
     try{
         const studentId = await studentService.createStudent(student);

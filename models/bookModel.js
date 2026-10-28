@@ -15,3 +15,20 @@ export const insert = async (book) => {
     
     return result.insertId;
 }
+
+// update 
+export const update = async (book) => {
+    const [result] = await pool.query (
+        "UPDATE book SET title= ?, author= ? WHERE id= ? ",
+        [book.title, book.author, book.id]
+    );
+    return result.affectedRows;
+}
+
+// delete
+export const remove = async (id) => {
+    const [result] = await pool.query (
+        "DELETE FROM book WHERE id= ? ", [id]
+    );
+    return result.affectedRows
+}
