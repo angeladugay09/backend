@@ -50,8 +50,8 @@ export const deleteBook = async (req, res) =>{
     const { id } = req.params;
     
     try{
-        const deleteBook = await bookService.deleteBook(parseInt(id));
-        res.status(20).json({
+        const deletedBook = await bookService.deleteBook(parseInt(id));
+        res.status(200).json({
             success: true,
             message: deletedBook
         });
