@@ -13,7 +13,8 @@ export const createBook = async(book) =>{
 
 // update
 export const updateBook = async (book) => {
-    return await bookModel.update(book);
+    const updatedBook = await bookModel.update(book);
+    return updatedBook;
 }
 
 // delete
