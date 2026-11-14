@@ -19,8 +19,12 @@
   },
   "homepage": "https://github.com/angeladugay09/backend#readme",
   "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
     "dotenv": "^18.0.6",
     "express": "^5.2.1",
-    "mysql2": "^3.24.5"
+    "mysql2": "^3.24.5",
+    "validation": "^0.0.1",
+    "validator": "^13.15.35"
   }
 }
